@@ -15,6 +15,21 @@
             "gdbPath": "/opt/homebrew/bin/arm-none-eabi-gdb",
             "device": "STM32F103C8",
             "runToEntryPoint": "main"
+        },
+        {
+            "name": "ATTACH Blue Pill - OpenOCD",
+            "type": "cortex-debug",
+            "request": "attach",
+            "cwd": "${workspaceFolder}",
+            "executable": "${command:st-stm32-ide-debug-launch.get-projects-binary-from-context1}",
+            "servertype": "openocd",
+            "serverpath": "/opt/homebrew/bin/openocd",
+            "configFiles": [
+                "${workspaceFolder}/openocd.cfg"
+            ],
+            "gdbPath": "/opt/homebrew/bin/arm-none-eabi-gdb",
+            "device": "STM32F103C8",
+            "runToEntryPoint": "main"
         }
     ]
 }

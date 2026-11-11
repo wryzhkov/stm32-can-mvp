@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Flash STM32 (OpenOCD)",
+            "type": "shell",
+            "command": "openocd",
+            "args": [
+    "-f",
+    "${workspaceFolder}/openocd.cfg",
+    "-c",
+    "program \"${workspaceFolder}/build/DEBUG/can_mvp.elf\" verify reset exit"
+],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        }
+    ]
+}

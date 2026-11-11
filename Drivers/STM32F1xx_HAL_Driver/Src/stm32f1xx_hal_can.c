@@ -333,7 +333,8 @@ HAL_StatusTypeDef HAL_CAN_Init(CAN_HandleTypeDef *hcan)
 
   /* Request initialisation */
   SET_BIT(hcan->Instance->MCR, CAN_MCR_INRQ);
-
+  /* Also request exit from Sleep mode */
+  CLEAR_BIT(hcan->Instance->MCR, CAN_MCR_SLEEP);
   /* Get tick */
   tickstart = HAL_GetTick();
 
